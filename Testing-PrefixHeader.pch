@@ -1,0 +1,23 @@
+//
+//  Testing-PrefixHeader.pch
+//  Testing
+//
+//  Created by Tops on 6/2/15.
+//  Copyright (c) 2015 Tops. All rights reserved.
+//
+
+#ifndef Testing_Testing_PrefixHeader_pch
+#define Testing_Testing_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+#import "AFNetworking.h"
+#import "WebserviceCaller.h"
+
+#endif
