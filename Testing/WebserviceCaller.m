@@ -4,7 +4,7 @@
 //
 //  Created by Tops on 1/1/15.
 //  Copyright (c) 2015 Tops. All rights reserved.
-//
+
 
 #import "WebserviceCaller.h"
 #import<objc/runtime.h>
@@ -17,13 +17,15 @@
 }
 
 static WebserviceCaller *singletonObj = NULL;
-+ (WebserviceCaller *)sharedSingleton {
++ (WebserviceCaller *)sharedSingleton{
     @synchronized(self) {
         if (singletonObj == NULL)
             singletonObj = [[self alloc] init];
     }
     return(singletonObj);
 }
+
+
 - (id) init {
     appDel=(AppDelegate *)[[UIApplication sharedApplication] delegate];
     return self;
@@ -33,10 +35,8 @@ static WebserviceCaller *singletonObj = NULL;
 -(void)BaseWsCall:(NSMutableDictionary *)params :(NSString *)fileNameURL
           success:(WebMasterSuccessBlock)successBlock{
     appDel=(AppDelegate *)[[UIApplication sharedApplication]delegate];
-    
     NSString *url= [NSString stringWithFormat:@"%@%@",g_BaseURL,fileNameURL];
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible: YES];
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible: YES];AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager POST:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible: NO];
         if ([[responseObject objectForKey:@"FLAG"] boolValue]) {
@@ -45,16 +45,16 @@ static WebserviceCaller *singletonObj = NULL;
                 if ([aKey isEqualToString:@"MESSAGE"]) {
                 }else if([aKey isEqualToString:@"FLAG"]){
                 }else{
-                if ([[responseObject valueForKey:aKey] isKindOfClass:[NSArray class]]) {
-                    NSArray *ary = [responseObject valueForKey:aKey];
-                    NSArray *retunArray = [self convertArray:ary :aKey];
-                    successBlock(retunArray);
-                }else if([[responseObject valueForKey:aKey] isKindOfClass:[NSMutableDictionary class]]){
-                    NSMutableDictionary *dict = [responseObject valueForKey:aKey];
-                      id instance =  [self convertDictonary:dict :aKey];
-                    successBlock(instance);
+                    if ([[responseObject valueForKey:aKey] isKindOfClass:[NSArray class]]) {
+                        NSArray *ary = [responseObject valueForKey:aKey];
+                        NSArray *retunArray = [self convertArray:ary :aKey];
+                        successBlock(retunArray);
+                    }else if([[responseObject valueForKey:aKey] isKindOfClass:[NSMutableDictionary class]]){
+                        NSMutableDictionary *dict = [responseObject valueForKey:aKey];
+                        id instance =  [self convertDictonary:dict :aKey];
+                        successBlock(instance);
+                    }
                 }
-              }
             }
         }else{
             
@@ -62,7 +62,7 @@ static WebserviceCaller *singletonObj = NULL;
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible: NO];
     }];
-  
+    
 }
 
 -(id)convertDictonary:(NSMutableDictionary *)dict :(NSString *)aKey{
@@ -89,9 +89,7 @@ static WebserviceCaller *singletonObj = NULL;
                     [instance setValue:[dict valueForKey:DataKey] forKey:DataKey];
                 }
             }
-            
-            
-            
+
         }
         return instance;
     } else {
@@ -104,14 +102,10 @@ static WebserviceCaller *singletonObj = NULL;
 -(NSArray *)convertArray:(NSArray *)ary :(NSString *)aKey{
     NSMutableArray *returnArray = [[NSMutableArray alloc]init];
     for (NSMutableDictionary *dict in ary) {
-     id instance = [self convertDictonary:dict :aKey];
+        id instance = [self convertDictonary:dict :aKey];
         [returnArray addObject:instance];
     }
     return returnArray;
 }
-
-
-
-
 
 @end
