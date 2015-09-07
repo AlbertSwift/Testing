@@ -107,5 +107,25 @@ static WebserviceCaller *singletonObj = NULL;
     }
     return returnArray;
 }
+-(void)baseImageUplaod:(NSMutableDictionary *)params :(NSString *)fileNameURL :(UIImage *)image :(NSString *)tag
+                sucess:(WebMasterSuccessBlock)successBlock{
+    NSString *url= [NSString stringWithFormat:@"%@%@",g_BaseURL,fileNameURL];
+    AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:url]];
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    
+    AFHTTPRequestOperation *op = [manager POST:url parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        //do not put image inside parameters dictionary as I did, but append it!
+        [formData appendPartWithFileData:imageData name:tag fileName:@"photo.jpg" mimeType:@"image/jpeg"];
+    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        //        [MBProgressHUD hideAllHUDsForView:appDel.window animated:YES];
+        //        NSLog(@"Success: %@ ***** %@", operation.responseString, responseObject);
+        successBlock(responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@",error);
+        //        [MBProgressHUD hideAllHUDsForView:appDel.window animated:YES];
+    }];
+    [op start];
+}
 
 @end

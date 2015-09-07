@@ -20,28 +20,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    NSMutableDictionary *param  = [[NSMutableDictionary alloc]init];
-    [param setValue:@"dipen@tops.com" forKey:@"email"];
-    [param setValue:@"tops" forKey:@"password"];
-    [param setValue:@"" forKey:@"device_token"];
+    NSMutableDictionary *dictMerchantDetails = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                                                @"testds123f@gmail.com",       @"email",
+                                                @"qweqwe",    @"password",
+                                                @"shopname",    @"name",
+                                                @"234234", @"phone",
+                                                @"23.0331792"    , @"latitude",
+                                                @"72.5167519", @"longitude",
+                                                @"", @"address",
+                                                @""    , @"city",
+                                                @"Music;", @"categories",
+                                                nil];
     
-    [[WebserviceCaller sharedSingleton] BaseWsCall:param :@"http://192.168.0.28/idea_management/trunk/ws/user/login" success:^(id responseData) {
-        user_data *data = responseData;
-        NSLog(@"%@",data.user_data_id);
-    }];
-   
-    
-    [[WebserviceCaller sharedSingleton] BaseWsCall:param :@"http://topsdemo.in/mit/idea_management/ws/user/inspiring_book_list" success:^(id responseData) {
-        NSArray *ary = responseData;
-        for (inspiring_book_listing *book in ary) {
-            NSLog(@"%@",book.title);
-        }
-    }];
-
-    
-    [[WebserviceCaller sharedSingleton] BaseWsCall:nil :@"http://192.168.0.143/idea_management/trunk/ws/user/great_thought_article_list" success:^(id responseData) {
-        NSLog(@"%@",responseData);
-
+    [[WebserviceCaller sharedSingleton]baseImageUplaod:dictMerchantDetails :@"http://192.168.0.14/okazyon/trunk/register.php" :[UIImage imageNamed:@"explore.png"] :@"profilepic" sucess:^(id responseData) {
+        
     }];
     
 }

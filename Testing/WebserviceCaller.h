@@ -20,6 +20,6 @@ typedef void(^SiAlertCancelBlock)();
 + (WebserviceCaller *)sharedSingleton;
 -(void)BaseWsCall:(NSMutableDictionary *)params :(NSString *)fileNameURL
           success:(WebMasterSuccessBlock)successBlock;
-
-
+-(void)baseImageUplaod:(NSMutableDictionary *)params :(NSString *)fileNameURL :(UIImage *)image :(NSString *)tag
+                sucess:(WebMasterSuccessBlock)successBlock;
 @end

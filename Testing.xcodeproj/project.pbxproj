@@ -29,6 +29,7 @@
 		E7689BBC1B1D6D060084573B /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = E7689BB11B1D6D050084573B /* AFURLResponseSerialization.m */; };
 		E7689BBD1B1D6D060084573B /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E7689BB31B1D6D050084573B /* AFURLSessionManager.m */; };
 		E7689BC01B1D82790084573B /* inspiring_book_listing.m in Sources */ = {isa = PBXBuildFile; fileRef = E7689BBF1B1D82790084573B /* inspiring_book_listing.m */; };
+		E7BD474E1B415A0C0001A712 /* explore.png in Resources */ = {isa = PBXBuildFile; fileRef = E7BD474D1B415A0C0001A712 /* explore.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		E7689BB31B1D6D050084573B /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		E7689BBE1B1D82790084573B /* inspiring_book_listing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inspiring_book_listing.h; sourceTree = "<group>"; };
 		E7689BBF1B1D82790084573B /* inspiring_book_listing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = inspiring_book_listing.m; sourceTree = "<group>"; };
+		E7BD474D1B415A0C0001A712 /* explore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = explore.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				E7689B511B1D66A10084573B /* ViewController.h */,
 				E7689B521B1D66A10084573B /* ViewController.m */,
 				E7689B591B1D66A10084573B /* LaunchScreen.xib */,
+				E7BD474D1B415A0C0001A712 /* explore.png */,
 				E7689B4E1B1D66A10084573B /* Testing.xcdatamodeld */,
 				E7689B471B1D66A10084573B /* Supporting Files */,
 				E7689B701B1D66B70084573B /* User.h */,
@@ -285,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7689B561B1D66A10084573B /* Main.storyboard in Resources */,
+				E7BD474E1B415A0C0001A712 /* explore.png in Resources */,
 				E7689B5B1B1D66A10084573B /* LaunchScreen.xib in Resources */,
 				E7689B581B1D66A10084573B /* Images.xcassets in Resources */,
 			);
@@ -518,6 +522,7 @@
 				E7689B6C1B1D66A10084573B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E7689B6D1B1D66A10084573B /* Build configuration list for PBXNativeTarget "TestingTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +531,7 @@
 				E7689B6F1B1D66A10084573B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
