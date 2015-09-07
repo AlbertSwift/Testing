@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E71CEF471B9D7AD300FBB0D3 /* webserviceCallr1.m in Sources */ = {isa = PBXBuildFile; fileRef = E71CEF461B9D7AD300FBB0D3 /* webserviceCallr1.m */; };
 		E7689B4A1B1D66A10084573B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7689B491B1D66A10084573B /* main.m */; };
 		E7689B4D1B1D66A10084573B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7689B4C1B1D66A10084573B /* AppDelegate.m */; };
 		E7689B501B1D66A10084573B /* Testing.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7689B4E1B1D66A10084573B /* Testing.xcdatamodeld */; };
@@ -43,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E71CEF451B9D7AD300FBB0D3 /* webserviceCallr1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = webserviceCallr1.h; sourceTree = "<group>"; };
+		E71CEF461B9D7AD300FBB0D3 /* webserviceCallr1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = webserviceCallr1.m; sourceTree = "<group>"; };
 		E7689B441B1D66A10084573B /* Testing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Testing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7689B481B1D66A10084573B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7689B491B1D66A10084573B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -143,6 +146,8 @@
 				E7689B471B1D66A10084573B /* Supporting Files */,
 				E7689B701B1D66B70084573B /* User.h */,
 				E7689B711B1D66B70084573B /* User.m */,
+				E71CEF451B9D7AD300FBB0D3 /* webserviceCallr1.h */,
+				E71CEF461B9D7AD300FBB0D3 /* webserviceCallr1.m */,
 				E7689B7A1B1D6B260084573B /* WebserviceCaller.h */,
 				E7689B7B1B1D6B260084573B /* WebserviceCaller.m */,
 				E7689B731B1D694F0084573B /* user_data.h */,
@@ -317,6 +322,7 @@
 				E7689BB71B1D6D050084573B /* AFImageRequestOperation.m in Sources */,
 				E7689B4A1B1D66A10084573B /* main.m in Sources */,
 				E7689BB41B1D6D050084573B /* AFHTTPRequestOperation.m in Sources */,
+				E71CEF471B9D7AD300FBB0D3 /* webserviceCallr1.m in Sources */,
 				E7689B531B1D66A10084573B /* ViewController.m in Sources */,
 				E7689B7C1B1D6B260084573B /* WebserviceCaller.m in Sources */,
 				E7689BB61B1D6D050084573B /* AFHTTPSessionManager.m in Sources */,
